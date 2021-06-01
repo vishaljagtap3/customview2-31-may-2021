@@ -1,11 +1,13 @@
 package `in`.bitcode.customview2
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.random.Random
 
 class ProductsAdapter(var products: ArrayList<Product>) :
     RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>() {
@@ -36,6 +38,11 @@ class ProductsAdapter(var products: ArrayList<Product>) :
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         holder.productView.product = products.get(position)
+        holder.productView.setBackgroundColor( Color.rgb(
+            Math.abs(Random.nextInt()) % 256,
+            Math.abs(Random.nextInt()) % 256,
+            Math.abs(Random.nextInt()) % 256)
+        )
     }
 
     //older way

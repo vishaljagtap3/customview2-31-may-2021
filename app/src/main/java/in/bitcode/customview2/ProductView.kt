@@ -35,7 +35,7 @@ class ProductView(context : Context, attrs : AttributeSet?) : LinearLayout(conte
         layoutParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
         var view =  LayoutInflater.from(context)
-            .inflate(R.layout.product_view, null)
+            .inflate(R.layout.product_view_vertical, null)
         this.addView(view)
 
         imgProduct = view.findViewById(R.id.imgProduct)
